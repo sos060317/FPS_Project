@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     int EnemyHp; //현재 적 Hp
-    [SerializeField] int EnemyHpSetting; //기본 Hp
+    [SerializeField] int EnemyHpSetting; //기본 Hp 세팅값
 
     public int BulletPower;
 
