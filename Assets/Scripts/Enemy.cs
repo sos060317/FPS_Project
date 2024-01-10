@@ -23,9 +23,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void EnemyHit() //피격 이벤트
+    private void EnemyHit(Collider other) //피격 이벤트
     {
-        if (CompareTag("Bullet")) //태그가 Bullet라면 EnemyHp가 BulletPower만큼 닳고 디버그 로그에 Hit를 띄움
+        if (other.gameObject.CompareTag("Bullet")) //태그가 Bullet라면 EnemyHp가 BulletPower만큼 닳고 디버그 로그에 Hit를 띄움
         {
             EnemyHp = EnemyHp - BulletPower;
             Debug.Log("HIt");
@@ -33,6 +33,6 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        EnemyHit();
+        EnemyHit(other);
     }
 }
