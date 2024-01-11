@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         if (transform.position == target) { DieDestroy(); return; }
-        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
+        transform.position = Vector3.MoveTowards(target, transform.position, Time.deltaTime * moveSpeed);
     }
 
     private void DieDestroy()
