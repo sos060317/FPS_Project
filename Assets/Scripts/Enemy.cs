@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     int EnemyHp; //현재 적 Hp
     [SerializeField] int EnemyHpSetting; //기본 Hp 세팅값
 
-    public int BulletPower;
 
     public void Awake()
     { 
@@ -17,7 +16,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Bullet")) //태그가 Bullet라면 EnemyHp가 BulletPower만큼 닳고 디버그 로그에 Hit를 띄움
         {
-            EnemyHp = EnemyHp - BulletPower;
+            EnemyHp = EnemyHp - 1;
             Debug.Log("HIt");
             if (EnemyHp <= 0)//HP가 0이 되었을때 게임오브젝트 파괴
             {
